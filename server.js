@@ -1,6 +1,6 @@
 import express from 'express';
 import axios from 'axios';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
+import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs';
 
 const app = express();
 const PORT = 3001;
@@ -58,7 +58,7 @@ app.get('/api/replacements/:group', async (req, res) => {
     console.log('Парсим PDF...');
     const dataBuffer = Buffer.from(response.data);
     const uint8Array = new Uint8Array(dataBuffer);
-    const pdf = await pdfjsLib.getDocument(uint8Array).promise;
+    const pdf = await getDocument(uint8Array).promise;
     console.log(`Количество страниц: ${pdf.numPages}`);
     const replacements = [];
     for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
@@ -491,7 +491,7 @@ app.get('/api/schedule/:group', async (req, res) => {
     const dataBuffer = Buffer.from(response.data);
     const uint8Array = new Uint8Array(dataBuffer);
 
-    const pdf = await pdfjsLib.getDocument(uint8Array).promise;
+    const pdf = await getDocument(uint8Array).promise;
 
     console.log(`Количество страниц: ${pdf.numPages}`);
 
