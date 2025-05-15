@@ -1,6 +1,6 @@
+import express from 'express';
+import axios from 'axios';
 import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
-const express = require('express');
-const axios = require('axios');
 
 const app = express();
 const PORT = 3001;
