@@ -1,6 +1,6 @@
 import express from 'express';
 import axios from 'axios';
-import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs';
+import { getDocument } from 'pdfjs-dist/legacy/build/pdf.min.mjs';
 
 
 const app = express();
