@@ -1,9 +1,8 @@
 import express from 'express';
 import axios from 'axios';
 import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs';
-require('./setup');
 
-const pdfjsLib = require('pdfjs-dist');
+
 const app = express();
 const PORT = 3001;
 
